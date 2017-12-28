@@ -12,7 +12,11 @@ from __future__ import with_statement
 
 import posixpath
 
-from urlparse import urlparse
+try:
+    from urllib.urlparse import urlparse
+except ImportError:
+    from urlparse import urlparse
+
 
 from fabric.api import abort, env, puts, run
 from fabric.colors import cyan
